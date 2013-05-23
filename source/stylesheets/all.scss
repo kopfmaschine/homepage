@@ -10,7 +10,7 @@ $text-color: shade($canvas-color, 70%);
 $border-color: shade($canvas-color, 10%);
 $secondary-text-color: shade($canvas-color, 30%);
 
-$page-gutter: 0.5rem;
+$page-gutter: 1rem;
 $grid-padding: 1rem;
 $vertical-padding: 1.4rem;
 
@@ -36,13 +36,18 @@ a {
 
 .units {
   width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   @include breakpoint($large-screen) {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: top;
     display: inline-block;
-    padding-right: $grid-padding;
     width: auto;
+    padding-right: $grid-padding;
+    &.last {
+      padding-right: 0;
+    }
     // This is ana eight column grid.
     $unit: 100% / 8;
     &.one { width: $unit * 1 }
@@ -54,17 +59,11 @@ a {
   }
 }
 
-.float-right {
-  float: right;
-}
-
-.float-left {
-  float: left;
-}
-
-.clear {
-  clear: both;
-}
+.float-right { float: right;}
+.float-left { float: left; }
+.clear { clear: both; }
+.align-right { text-align: right; }
+.align-left { text-align: left; }
 
 // Make all images scale (taken from foundation/grid)
 img { max-width: 100%; height: auto; }
@@ -77,21 +76,45 @@ html {
   background-color: $canvas-color;
 }
 
+hr {
+  border-top: 1px solid rgba(#333, 0.3);
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
 // Reset headings
 h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
   font-weight: normal;
-  margin: 0.5em 0;
+  margin: 0.5rem 0;
 }
 
-.testimonial {
-  border-radius: 5px;
-  color: $secondary-text-color;
+.footer-wrapper {
+  $color: tint($canvas-color, 60%);
+  background: $color;
+  border-top: 1px solid shade($color, 10%);
+  border-bottom: 1px solid shade($color, 10%);
+  color: shade($color, 60%);
 }
+
+.testimonials {
+  $color: tint($canvas-color, 60%);
+  color: shade($color, 60%);
+}
+
+.project-quote {
+  color: $secondary-text-color;
+  blockquote {
+    font-size: 1.8rem;
+  }
+}
+
+
 blockquote {
-  font-size: 1.8rem;
   font-family: $serif;
-  margin: 0.1em;
+  font-style: italic;
+  margin: 0.1rem;
   &::before {
     content: '\201E';
   }
@@ -99,6 +122,7 @@ blockquote {
     content: '\201C';
   }
 }
+
 cite {
   font-style: normal;
   font-size: 0.8rem;
@@ -107,7 +131,7 @@ cite {
 
 .header-wrapper {
   background: $highlight-color;
-  border-bottom: 2px solid tint($highlight-color, 20%);
+  border-bottom: 1px solid shade($highlight-color, 10%);
   padding: 1rem 0 2.6rem;
 }
 .header {
@@ -119,38 +143,30 @@ cite {
 }
 .header-heading {
   font-weight: bold;
-  font-family: $sans-serif;
   line-height: 1.2;
-  margin: 0 0 0.7em 0;
-  padding: 2em 0;
+  margin: 0 0 0.7rem 0;
+  padding: 2rem 0;
 }
 .header-subheading {
   font-weight: normal;
 }
 
 .about {
-  font-size: 1.3rem;
+  // font-size: 1.3rem;
   font-weight: bold;
 }
 
-.main-wrapper {
-  max-width: 42rem;
+.main {
+  max-width: 45rem;
   margin: 0 auto;
   padding-left: $page-gutter;
   padding-right: $page-gutter;
 }
-.main {
-  padding-top: 2em;
-}
 
-
-.section {
-  margin-bottom: 3rem;
-}
 .section-heading {
   font-size: 0.8rem;
-  padding: 0.4em 0;
-  margin: 0;
+  padding: 0.4rem 0;
+  margin: 2rem 0 0;
   border-bottom: 1px solid $border-color;
   color: $secondary-text-color;
 }
@@ -172,6 +188,5 @@ cite {
 }
 
 .footer {
-  @extend .pagebox;
   color: $secondary-text-color;
 }
