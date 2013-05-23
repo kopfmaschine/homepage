@@ -36,7 +36,6 @@ a {
 
 .units {
   width: 100%;
-  padding-top: 1rem;
   padding-bottom: 1rem;
   @include breakpoint($large-screen) {
     -moz-box-sizing: border-box;
@@ -44,6 +43,7 @@ a {
     vertical-align: top;
     display: inline-block;
     width: auto;
+    padding-bottom: 0;
     padding-right: $grid-padding;
     &.last {
       padding-right: 0;
@@ -64,6 +64,7 @@ a {
 .clear { clear: both; }
 .align-right { text-align: right; }
 .align-left { text-align: left; }
+.align-center { text-align: center; }
 
 // Make all images scale (taken from foundation/grid)
 img { max-width: 100%; height: auto; }
@@ -92,6 +93,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .footer-wrapper {
   $color: tint($canvas-color, 60%);
+  padding-top: 1em;
   background: $color;
   border-top: 1px solid shade($color, 10%);
   border-bottom: 1px solid shade($color, 10%);
