@@ -1,2 +1,2 @@
 Start
-  $ bundle install && bundle exec middleman start
+  $ bundle install && bundle exec middleman server
