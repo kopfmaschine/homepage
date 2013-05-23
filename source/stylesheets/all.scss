@@ -5,7 +5,7 @@
 
 $base-color:  white; // Oder #ff8000 ?
 $highlight-color: #ff8000; // Used for the header
-$canvas-color: shade($base-color, 10%);
+$canvas-color: shade($base-color, 5%);
 $text-color: shade($canvas-color, 70%);
 $border-color: shade($canvas-color, 10%);
 $secondary-text-color: shade($canvas-color, 30%);
