@@ -2,59 +2,119 @@
 @import "base";
 @import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
-$base-color:  #ff8000;// #ff8000 #008040
+$base-color:  #ff8000; // #008040
+$highlight-color: #ff8000; // #008040
 $black: shade($base-color, 70%);
 $white: tint($base-color, 70%);
-$canvas-color: tint($base-color, 20%);
 $text-color: $black;
-$secondary-color: shade($canvas-color, 20%);
+$secondary-color: shade($highlight-color, 20%);
 $secondary-text-color: shade($secondary-color, 20%);
-$gutter: 0.6rem;
+$page-gutter: 0.6rem;
+$grid-padding: 1rem;
 $vertical-padding: 1.4rem;
 $serif: Georgia, serif;
 $sans-serif: 'Helvetica Neue', sans-serif;
 
-html {
-  color: $text-color;
-  background-color: $canvas-color;
-  font-family: $sans-serif;
+// Minimal shared styles for headings
+%heading {
+  font-weight: normal;
+  font-family: $serif;
 }
 
-body {
-  max-width: 42rem;
-  margin: 0 auto;
+.units {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top;
+  display: inline-block;
+  padding-right: $grid-padding;
+
+  $unit: 100% / 8;
+  &.one { width: $unit * 1 }
+  &.two { width: $unit * 2 }
+  &.three { width: $unit * 3 }
+  &.four { width: $unit * 4 }
+  &.five { width: $unit * 5 }
+  &.six { width: $unit * 6 }
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+// Make all images scale (taken from foundation/grid)
+img { max-width: 100%; height: auto; }
+img { -ms-interpolation-mode: bicubic; }
+
+html {
+  color: $text-color;
+  font-family: $sans-serif;
+  line-height: 1.5em;
+  background-color: shade($highlight-color, 10%);
 }
 
 // Reset headings
 h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
   font-weight: normal;
+  margin: 0.5em 0;
 }
 
-%heading {
-  font-weight: bold;
+.testimonial {
+  border-radius: 5px;
+  color: $secondary-text-color;
+}
+blockquote {
+  font-size: 1.8rem;
+  font-family: $serif;
+  margin: 0.1em;
+  &::before {
+    content: '\201E';
+  }
+  &::after {
+    content: '\201C';
+  }
+}
+cite {
+  margin-left: 2em;
+  font-style: normal;
+  font-size: 0.8rem;
+
 }
 
-
-.pagehead {
-  padding: 2em $gutter;
+.pagebox {
+  max-width: 42rem;
+  margin: 0 auto;
 }
-.pagehead-heading {
+
+.header {
+  background: $highlight-color;
+  color: shade($highlight-color, 60%);
+  padding: 2em 0 4em;
+}
+.header-heading {
   font-weight: bold;
   font-family: $sans-serif;
   line-height: 1.1em;
+  padding: 2em 0;
 }
-.pagehead-subheading {
+.header-subheading {
+  font-size: 0.8rem;
   font-weight: normal;
-  color: $secondary-text-color;
 }
-
-.pagecontent {
-  padding: $vertical-padding $gutter;
+.header-about {
+  font-family: $serif;
 }
 
 .section {
-  margin-bottom: 3rem;
+  margin: 2rem 0  3rem;
 }
 .section-heading {
   font-size: 0.8rem;
@@ -63,16 +123,15 @@ h1,h2,h3,h4,h5,h6 {
   border-bottom: 1px solid $secondary-color;
 }
 
-.legible {
-  font-family: $serif;
-}
-
-.feature {
-}
-.feature-heading {
+.featured {}
+.featured-heading {
   @extend %heading;
   font-size: 1.7rem;
 }
+.featured-text {
+  font-family: $serif;
+}
+
 
 .project {
   padding: $vertical-padding 0;
@@ -80,7 +139,11 @@ h1,h2,h3,h4,h5,h6 {
 .project-heading {
   @extend %heading;
 }
+.project-text {
+  font-family: $serif;
+}
 
 .footer {
+  @extend .pagebox;
   color: $secondary-text-color;
 }
