@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "base";
+
+$white: #fff;
+$black: #222;
+$text-color: $black;
+$secondary-color: tint($black, 20%);
+$high-color: #ff8000;
+$low-color: $secondary-color;
+
+html {
+  color: $text-color;
+  // background-color: $white;
+  // $grid-color: shade($white, 20%);
+  // background-image: linear-gradient($grid-color 2px, transparent 2px),
+  // linear-gradient(90deg, $grid-color 2px, transparent 2px),
+  // linear-gradient($grid-color 1px, transparent 1px),
+  // linear-gradient(90deg, $grid-color 1px, transparent 1px);
+  // background-size: 1.5em 1.5em, 1.5em 1.5em, 0.25em 0.25em, 0.25em 0.25em;
+  // background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+body {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.pageheader {
+  display: table;
+  width: 100%;
+  font-size: 4rem;
+  height: 4.5em;
+  text-align: center;
+}
+
+.pageheader-title {
+  display: table-cell;
+  font-size: inherit;
+  vertical-align: middle;
+  font-weight: bold;
+  color: $black;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+}
+
+.project {
+  margin-bottom: 1em;
+}
+
+.pagecontent {
+  padding: 1rem;
+}
+
+.subheading {
+  font-weight: normal;
+  // color: $secondary-color;
+  margin: 0;
+  padding: 0;
+}
