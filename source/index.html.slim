@@ -1,80 +1,72 @@
-.header
-  .pagebox
+.header-wrapper
+  .header
     h1.header-heading
       | Kopfmaschine
       br
       .header-subheading
         | Softwareentwicklung
-    .header-about
-      |
-        Fortschritt.
-        Wir sind Kopfmaschine.
-        Wir werden Teil deines Teams.
-        Dein Partner für handgemachte Software.
-        Custom-Made Software.
-        Wir Lösen Probleme.
-        Deine IT-Taskforce.
+    .about
+      | Wir bauen Software um Probleme zu lösen. Unser Handwergszeug sind morderne Webtechnologien wie <i>Ruby on Rails</i> und <i>HTML5</i>.
       p
-        |
-          Wir bauen Software um Probleme zu lösen. Unser Handwergszeug sind morderne Webtechnologien.
+        ' Dank flexibler Technologien und dem Verzicht auf sperrige Prozesse sind wir in der Lage schnell auf die Wünsche unserer Kunden zu reagieren. Funktionierende Software ist uns wichtiger als ausschweifende Konzepte.
 
-      p
-        | Ruby on Rails, JavaScript, Responsive Design, HTML 5, Caching, Server, Buzzword Bingo
+.main-wrapper
+  .main
 
+    .section
+      h2.section-heading Aktuelles Projekt
 
-.pagebox
-  .section
-    h2.section-heading Aktuelles Projekt
-
-    .featured
       h3.featured-heading YogaEasy.de
-      .four.units.featured-text
-        p
+      .four.units
+        .text
           | Die Kernfunktion von Yogaeasy.de bildet eine breite Auswahl an hochqualitativen Yoga-Leer-Videos. Eine besondere Rolle spielt dabei die Such- und Filterfunktion die sowohl durch Einfachheit als auch Umfang glänzen kann. Für die Kunden nicht sichtbar versteckt sich ein Interface worüber sich Videos und Artikel ohne Programmierkenntnisse leicht Hochladen und verwalten lassen.
       .four.units.float-right
-        == image_tag "ye/4.png"
-    .four.units.float-left
-      == image_tag "ye/5.png"
-    .four.units
-      .featured-text
-        p
-          | Abgerundet wird das Angebot durch ein Download-Shop der angebotenen Videos so wie ein Shop für Yoga-Accessoires.
-        p
-         | 2012 wurden wir mit dem Relaunch beauftragt. Die Seite wurde dabei von Grund auf neu gestaltet und von uns um viele Funktionen erweitert. Seit dem erfreut sie sich stetiger Beliebtheit und der Kundenstamm wächst schneller als je zuvor.
-    .testimonial
-      blockquote Danke für den tollen relaunch!
-      cite Henrike Fröchling, Geschäftsführerin YogaEasy.de
+        == image_tag "ye/5.png"
+      p.four.units.float-left
+        == image_tag "ye/3.png"
+      .four.units
+        .text
+          p
+            | Abgerundet wird das Angebot durch ein Download-Shop der angebotenen Videos so wie ein Shop für Yoga-Accessoires.
+          p
+           | 2012 wurden wir mit dem Relaunch beauftragt. Die Seite wurde dabei von Grund auf neu gestaltet und von uns um viele Funktionen erweitert. Seit dem erfreut sie sich stetiger Beliebtheit und der Kundenstamm wächst schneller als je zuvor.
+      .testimonial.clear
+        blockquote.quote Danke für den tollen relaunch!
+        cite Henrike Fröchling, Geschäftsführerin
 
-  .section
-    h2.section-heading Vorherige Projekte
+    .section
+      h2.section-heading Weitere Projekte
 
-    .project
-      h3.project-heading
-        | Funfactory
-      .project-text
-        | Die Funfactory produziert Spielzeuge für Erwachsene. Das oberste Ziel ist mit Materialien von höchster Qualität und Hautverträglichkeit bei ausgefallenen Formen zu arbeiten. Eine deutsche Firma ist Welt weit ganz groß mit ihren Produkten.
-        ul
-          li Anbindund an Warenwirtschaft
+      .project
+        h3.project-heading
+          | Funfactory
+        .text
+          | Die Funfactory produziert Spielzeuge für Erwachsene. Das oberste Ziel ist mit Materialien von höchster Qualität und Hautverträglichkeit bei ausgefallenen Formen zu arbeiten. Eine deutsche Firma ist Welt weit ganz groß mit ihren Produkten.
 
-    .project
-      h3.project-heading
-        | Nimm den Besten
-      .project-text
-        | NimmDenBesten.de ist eine Platform auf der Endkunden Bewertungen zu verschiedensten Dienstleistern abgeben können. Das Ziel ist es durch viele Meinungen bzw. kollektiver Intelligenz sich den für sich am besten erscheinenden Dienstleister empfehlen zu lassen.
+      .project
+        h3.project-heading
+          | Nimm den Besten
+        .text
+          | NimmDenBesten.de ist eine Platform auf der Endkunden Bewertungen zu verschiedensten Dienstleistern abgeben können. Das Ziel ist es durch viele Meinungen bzw. kollektiver Intelligenz sich den für sich am besten erscheinenden Dienstleister empfehlen zu lassen.
 
-    .project
-      h3.project-heading
-        | Tedox KunO
-      .project-info
-        | description
+      .project
+        h3.project-heading
+          | Tedox KunO
+        .text
+          | description
 
-    .project
-      h3.project-heading
-        | Engineyard AppCloud
-      .project-info
-        | description
+      .project
+        h3.project-heading
+          | Engine Yard AppCloud
+        .float-left.units
+          == image_tag "ey/logo.png"
+        .text
+          | Engine Yard ist einer der führenden <i>Platform as a Service</i> (PaaS) Anbieter weltweit. Im Jahr 2011 haben wir als Teil des Entwickler-Teams in San Francisco am Hauptprodukt <i>App Cloud</i> gearbeitet. Für mehrere Wochen durften wir dafür vor Ort die californische Sonne genießen und haben etwas von dem Geist der "Hauptstadt des Internets" mitgenommen.
+        span.testimonial
+          blockquote Awesome!
+          cite Tammer Saleh, CTO
 
-.footer
-  h2.section-heading Impressum
-  p
-    small &copy; Kopfmaschine 2010, 2011, 2012
+  .footer
+    h2.section-heading Impressum
+    p
+      small &copy; Kopfmaschine 2010, 2011, 2012, 2013

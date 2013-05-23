@@ -1,19 +1,23 @@
 @charset "utf-8";
 @import "base";
+@import "breakpoint";
 @import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
-$base-color:  #ff8000; // #008040
-$highlight-color: #ff8000; // #008040
-$black: shade($base-color, 70%);
-$white: tint($base-color, 70%);
-$text-color: $black;
-$secondary-color: shade($highlight-color, 20%);
-$secondary-text-color: shade($secondary-color, 20%);
-$page-gutter: 0.6rem;
+$base-color:  white; // Oder #ff8000 ?
+$highlight-color: #ff8000; // Used for the header
+$canvas-color: shade($base-color, 10%);
+$text-color: shade($canvas-color, 70%);
+$border-color: shade($canvas-color, 10%);
+$secondary-text-color: shade($canvas-color, 30%);
+
+$page-gutter: 0.5rem;
 $grid-padding: 1rem;
 $vertical-padding: 1.4rem;
-$serif: Georgia, serif;
+
 $sans-serif: 'Helvetica Neue', sans-serif;
+$serif: Georgia, serif;
+
+$large-screen: 640px;
 
 // Minimal shared styles for headings
 %heading {
@@ -21,20 +25,33 @@ $sans-serif: 'Helvetica Neue', sans-serif;
   font-family: $serif;
 }
 
-.units {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  vertical-align: top;
-  display: inline-block;
-  padding-right: $grid-padding;
+a {
+  color: inherit;
+  &:hover {
+    color: $highlight-color;
+    background: tint($highlight-color, 60%);
+    text-decoration: none;
+  }
+}
 
-  $unit: 100% / 8;
-  &.one { width: $unit * 1 }
-  &.two { width: $unit * 2 }
-  &.three { width: $unit * 3 }
-  &.four { width: $unit * 4 }
-  &.five { width: $unit * 5 }
-  &.six { width: $unit * 6 }
+.units {
+  width: 100%;
+  @include breakpoint($large-screen) {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+    display: inline-block;
+    padding-right: $grid-padding;
+    width: auto;
+    // This is ana eight column grid.
+    $unit: 100% / 8;
+    &.one { width: $unit * 1 }
+    &.two { width: $unit * 2 }
+    &.three { width: $unit * 3 }
+    &.four { width: $unit * 4 }
+    &.five { width: $unit * 5 }
+    &.six { width: $unit * 6 }
+  }
 }
 
 .float-right {
@@ -56,8 +73,8 @@ img { -ms-interpolation-mode: bicubic; }
 html {
   color: $text-color;
   font-family: $sans-serif;
-  line-height: 1.5em;
-  background-color: shade($highlight-color, 10%);
+  line-height: 1.5;
+  background-color: $canvas-color;
 }
 
 // Reset headings
@@ -83,64 +100,75 @@ blockquote {
   }
 }
 cite {
-  margin-left: 2em;
   font-style: normal;
   font-size: 0.8rem;
 
 }
 
-.pagebox {
-  max-width: 42rem;
-  margin: 0 auto;
-}
-
-.header {
+.header-wrapper {
   background: $highlight-color;
+  border-bottom: 2px solid tint($highlight-color, 20%);
+  padding: 3rem 0 3.6rem;
+}
+.header {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding-left: $page-gutter;
+  padding-right: $page-gutter;
   color: shade($highlight-color, 60%);
-  padding: 2em 0 4em;
 }
 .header-heading {
   font-weight: bold;
   font-family: $sans-serif;
-  line-height: 1.1em;
+  line-height: 1.2;
+  margin: 0 0 0.7em 0;
   padding: 2em 0;
 }
 .header-subheading {
-  font-size: 0.8rem;
   font-weight: normal;
 }
-.header-about {
-  font-family: $serif;
+
+.about {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
+.main-wrapper {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-left: $page-gutter;
+  padding-right: $page-gutter;
+}
+.main {
+  padding-top: 2em;
+}
+
+
 .section {
-  margin: 2rem 0  3rem;
+  margin-bottom: 3rem;
 }
 .section-heading {
   font-size: 0.8rem;
   padding: 0.4em 0;
   margin: 0;
-  border-bottom: 1px solid $secondary-color;
+  border-bottom: 1px solid $border-color;
+  color: $secondary-text-color;
 }
 
-.featured {}
 .featured-heading {
   @extend %heading;
-  font-size: 1.7rem;
-}
-.featured-text {
-  font-family: $serif;
+  font-size: 1.3rem;
 }
 
+.text {
+  font-family: $serif;
+}
 
 .project {
   padding: $vertical-padding 0;
 }
 .project-heading {
   @extend %heading;
-}
-.project-text {
-  font-family: $serif;
 }
 
 .footer {
