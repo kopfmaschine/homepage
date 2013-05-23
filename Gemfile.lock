@@ -4,6 +4,9 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    bourbon (3.1.6)
+      sass (>= 3.2.0)
+      thor
     chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-script (2.2.0)
@@ -124,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   middleman (~> 3.0.11)
   middleman-livereload (~> 3.0.1)
   pry
