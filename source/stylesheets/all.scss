@@ -22,8 +22,8 @@ $large-screen: 640px;
 @mixin padded_row($width) {
   padding-right: $page-gutter;
   padding-left: $page-gutter;
+  max-width: $width;
   @include breakpoint($width + 2 * $page-gutter) {
-    max-width: $width;
     padding-right: calc(50% - #{$width / 2});
     padding-left: calc(50% - #{$width / 2});
   }
