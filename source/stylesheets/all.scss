@@ -2,10 +2,9 @@
 @import "base";
 @import "compass";
 @import "breakpoint";
-@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
-$base-color:  white; // Oder #ff8000 ?
-$highlight-color: #ff8000; // Used for the header
+$base-color:  white;
+$highlight-color: #ff8b19; // Used for the header
 $canvas-color: shade($base-color, 5%);
 $text-color: shade($canvas-color, 70%);
 $border-color: shade($canvas-color, 10%);
@@ -150,7 +149,11 @@ cite {
   border-bottom: 1px solid shade($highlight-color, 10%);
   padding-top: 1rem;
   padding-bottom: 2.6rem;
-  color: shade($highlight-color, 60%);
+  color: shade($highlight-color, 70%);
+}
+.header-logo {
+  width: 240px;
+  margin: 1rem 0;
 }
 .header-heading {
   font-weight: bold;
