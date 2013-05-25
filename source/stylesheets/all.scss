@@ -2,6 +2,7 @@
 @import "base";
 @import "compass";
 @import "breakpoint";
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
 
 $base-color:  white;
 $highlight-color: #ff8b19; // Used for the header
@@ -15,7 +16,7 @@ $grid-padding: 1rem;
 $vertical-padding: 1.4rem;
 
 $sans-serif: 'Helvetica Neue', sans-serif;
-$serif: Georgia, serif;
+$serif: 'Vollkorn', serif;
 
 $large-screen: 640px;
 
