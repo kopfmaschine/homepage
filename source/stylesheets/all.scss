@@ -71,9 +71,17 @@ a {
   }
 }
 
+.row {
+  clear: both;
+}
+
+.figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .float-right { float: right;}
 .float-left { float: left; }
-.clear { clear: both; }
 .align-right { text-align: right; }
 .align-left { text-align: left; }
 .align-center { text-align: center; }
