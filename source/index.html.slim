@@ -1,7 +1,7 @@
 .header
   .header-title
     == image_tag 'kopfmaschine/logo.svg', class: 'header-logo', onerror:"this.onerror=null; this.src='kopfmaschine/logo.png'"
-  .about
+  .header-about
     | Software soll Probleme lösen. Wir unterstützen dabei durch Beratung und Umsetzung deiner Ideen mit aktuellen Webtechnologien wie Ruby on Rails und HTML5.
     p
       | Durch iterative Projektführung und viele Gespräche entwickeln wir zusammen genau die Software die du dir vorstellst und sich deine Kunden wünschen.
@@ -11,12 +11,13 @@
 
   h3.featured-heading YogaEasy.de
 
-  .figure.four.units.float-right
+  .four.units.float-right
     == link_to "http://yogaeasy.de/magazin", target: '_blank' do
       == image_tag "ye/5.png", class: 'figure-img'
   .text.four.units
-    | Die Kernfunktion von <a href="http://yogaeasy.de" target="_blank">Yogaeasy.de</a> bildet eine breite Auswahl an hochqualitativen Yoga-Lehrvideos. Eine besondere Rolle spielt dabei die Such- und Filterfunktion die sowohl durch Einfachheit als auch Umfang glänzen kann. Für die Kunden nicht sichtbar ist ein Interface worüber sich Videos und Artikel verwalten lassen.
-  .figure.four.units.float-left
+    p
+      | Die Kernfunktion von <a href="http://yogaeasy.de" target="_blank">Yogaeasy.de</a> bildet eine breite Auswahl an hochqualitativen Yoga-Lehrvideos. Eine besondere Rolle spielt dabei die Such- und Filterfunktion die sowohl durch Einfachheit als auch Umfang glänzen kann. Für die Kunden nicht sichtbar ist ein Interface worüber sich Videos und Artikel verwalten lassen.
+  .four.units.float-left
     == link_to "http://yogaeasy.de/videos", target: '_blank' do
       == image_tag "ye/3.png", class: 'figure-img'
   .text.four.units
