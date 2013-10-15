@@ -9,18 +9,20 @@
 .main
   h2.section-heading Aktuelles Projekt
 
-  h3.featured-heading YogaEasy.de
+  h3.h.h--featured YogaEasy.de
 
-  .four.units.float-right
-    == link_to "http://yogaeasy.de/magazin", target: '_blank' do
-      == image_tag "ye/5.png", class: 'figure-img'
-  .text.four.units
+  .six.units.float-right
+    .figure
+      == link_to "http://yogaeasy.de/magazin", target: '_blank' do
+        == image_tag "ye/5.png", class: 'figure-img'
+  .text.six.units
     p
       | Die Kernfunktion von <a href="http://yogaeasy.de" target="_blank">Yogaeasy.de</a> bildet eine breite Auswahl an hochqualitativen Yoga-Lehrvideos. Eine besondere Rolle spielt dabei die Such- und Filterfunktion die sowohl durch Einfachheit als auch Umfang glänzen kann. Für die Kunden nicht sichtbar ist ein Interface worüber sich Videos und Artikel verwalten lassen.
-  .four.units.float-left
-    == link_to "http://yogaeasy.de/videos", target: '_blank' do
-      == image_tag "ye/3.png", class: 'figure-img'
-  .text.four.units
+  .six.units.float-left
+    .figure
+      == link_to "http://yogaeasy.de/videos", target: '_blank' do
+        == image_tag "ye/3.png", class: 'figure-img'
+  .text.six.units
     p
       | Abgerundet wird das Angebot durch externe Video-Download-Shops für angebotenen Videos sowie ein Shop für Yoga-Accessoires. Ganz neu ist die YogaEasy iPad App, für die wir die API inklusive Möglichkeit für In-App-purchases gebaut haben.
     p
@@ -30,12 +32,14 @@
     blockquote Danke für den tollen Relaunch!
     cite Henrike Fröchling, Geschäftsführerin
 
+
   h2.section-heading Weitere Projekte
 
   .project
-    h3.project-heading
-      | Funfactory
-    .one.units.align-center
+    h3.h
+      | Funfactory 
+      small 08/2010 – 05/2013
+    .two.units.align-center
       == image_tag 'ff/logo.png'
     .six.units.last
       .text
@@ -43,12 +47,11 @@
         p
           | Als technische Herausforderungen galten hier ein hoher Besucherstrom von wöchentlich fast 200.000 Seitenansichten, sowie eine beidseitige Synchronisierung mit einer Warenwirtschaft zu meistern.
 
-  hr
-
   .project
-    h3.project-heading
-      | Nimm den Besten
-    .five.units
+    h3.h
+      | Nimm den Besten 
+      small 2012
+    .six.units
       .text
         | NimmDenBesten.de ist eine Platform auf der Endkunden Bewertungen zu verschiedensten Dienstleistern abgeben können. Das Ziel ist es, sich durch viele Meinungen und kollektive Intelligenz für den besten Dienstleister entscheiden zu können.
         p
@@ -56,20 +59,19 @@
     .three.units.last
       == image_tag 'ndb/1.png', class: 'figure-img'
 
-  hr
+  .project
+    h3.h
+      | --- Top Secret --- 
+      small 2011
+    .ten.units.last
+      .text
+        | Ein interessantes Projekt, dessen Name leider geheim bleiben muss. Es wurde eine Webapplikation entwickelt, die offline benutzt werden kann um auch an internetfernen Orten Arbeiten zu können. Sobald der Laptop wieder an das Internet angeschlossen wird, werden die Arbeitsergebnisse auf einen zentralen Server synchronisiert und ausgewertet. Alles im Browser... Und du dachtest, der sei nur für youtube und facebook.
 
   .project
-    h3.project-heading
-      | --- top secret ---
-    .text
-      | Ein interessantes Projekt, dessen Name leider geheim bleiben muss. Es wurde eine Webapplikation entwickelt, die offline benutzt werden kann um auch an internetfernen Orten Arbeiten zu können. Sobald der Laptop wieder an das Internet angeschlossen wird, werden die Arbeitsergebnisse auf einen zentralen Server synchronisiert und ausgewertet. Alles im Browser... Und du dachtest, der sei nur für youtube und facebook.
-
-  hr
-
-  .project
-    h3.project-heading
-      | Engine Yard AppCloud
-    .one.units.align-center
+    h3.h
+      | Engine Yard AppCloud 
+      small 2011
+    .two.units.align-center
       == image_tag "ey/logo.png"
     .six.units.last
       .text
@@ -78,30 +80,31 @@
         blockquote Awesome!
         cite Tammer Saleh, VP of Engineering
 
-.footer
-  .testimonials
-    .units
-      blockquote
-        |
-          Die Arbeitsergebnisse der Kopfmaschine lagen jedesmal über unseren Erwartungen was sich vor allem an der Eleganz und Wartbarkeit des Codes zeigte. Ich kann mit ruhigem Gewissen sagen: Money very well spent.
-      cite Johannes Käfer, Beko Käuferportal GmbH
+  h2.section-heading Feedback
+  .project
+    blockquote
+      |
+        Die Arbeitsergebnisse der Kopfmaschine lagen jedesmal über unseren Erwartungen was sich vor allem an der Eleganz und Wartbarkeit des Codes zeigte. Ich kann mit ruhigem Gewissen sagen: Money very well spent.
+    cite Johannes Käfer, Beko Käuferportal GmbH
 
-      hr
+    hr
 
-      blockquote
-        |
-          Wir sind froh, dass wir mit euch zusammen gearbeitet haben – schnell und gut. Das ist wirklich eine super Leistung was ihr abgeliefert habt!
-      cite Eduard Scheling , Nordwest-Zeitung
+    blockquote
+      |
+        Wir sind froh, dass wir mit euch zusammen gearbeitet haben – schnell und gut. Das ist wirklich eine super Leistung was ihr abgeliefert habt!
+    cite Eduard Scheling , Nordwest-Zeitung
 
-      hr
+    hr
 
-      blockquote
-        |
-          In the brief time we worked with Thorben and Jan at Envy Labs it became quickly clear they're top notch Ruby/Rails developers. The code they wrote for us was clean and they wrote tests every step of the way.
-      cite Gregg Pollack, Envy Labs
+    blockquote
+      |
+        In the brief time we worked with Thorben and Jan at Envy Labs it became quickly clear they're top notch Ruby/Rails developers. The code they wrote for us was clean and they wrote tests every step of the way.
+    cite Gregg Pollack, Envy Labs
 
+footer.footer
+
+  h2.section-heading.section-heading--footer Impressum
   .imprint
-    h2.section-heading Impressum
     p
       |
         Angaben gemäß § 5 TMG:
@@ -119,5 +122,5 @@
     p
       |
         E-Mail: jan@kopfmaschine.com
-    p
-      small &copy; Kopfmaschine 2010, 2011, 2012, 2013
+  p
+    small &copy; Kopfmaschine 2010, 2011, 2012, 2013

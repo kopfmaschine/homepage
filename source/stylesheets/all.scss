@@ -4,15 +4,24 @@
 @import "breakpoint";
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
 
-$base-color:  white;
+$white: white;
+
 $highlight-color: #ff8b19; // Used for the header
-$canvas-color: shade($base-color, 5%);
+$canvas-color: $white;
 $text-color: shade($canvas-color, 70%);
 $border-color: shade($canvas-color, 10%);
 $secondary-text-color: shade($canvas-color, 30%);
 
+$base-line-height: 1.5;
+$base-font-size: 16px;
+
+$footer-bg-color: mix($highlight-color, $canvas-color, 20%);
+$footer-text-color: shade($footer-bg-color, 40%);
+$footer-secondary-text-color: shade($footer-bg-color, 30%);
+$footer-border-color: shade($footer-bg-color, 10%);
+
 $page-gutter: 1rem;
-$grid-padding: 1rem;
+$grid-padding: 1.2rem;
 $vertical-padding: 1.4rem;
 
 $sans-serif: 'Helvetica Neue', sans-serif;
@@ -32,18 +41,11 @@ $large-screen: 640px;
   }
 }
 
-// Minimal shared styles for headings
-%heading {
-  font-weight: normal;
-  font-family: $serif;
-}
-
 a {
-  color: inherit;
+  color: $highlight-color;
   &:hover {
-    color: $highlight-color;
-    background: tint($highlight-color, 60%);
-    text-decoration: none;
+    color: white;
+    background: $highlight-color;
   }
 }
 
@@ -61,13 +63,14 @@ a {
       padding-right: 0;
     }
     // This is ana eight column grid.
-    $unit: 100% / 8;
-    &.one { width: $unit * 1 }
+    $unit: 100% / 12;
     &.two { width: $unit * 2 }
     &.three { width: $unit * 3 }
     &.four { width: $unit * 4 }
     &.five { width: $unit * 5 }
     &.six { width: $unit * 6 }
+    &.eight { width: $unit * 6 }
+    &.ten { width: $unit * 10 }
   }
 }
 
@@ -88,7 +91,8 @@ img { -ms-interpolation-mode: bicubic; }
 html {
   color: $text-color;
   font-family: $sans-serif;
-  line-height: 1.5;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
   background-color: $canvas-color;
 }
 
@@ -103,26 +107,48 @@ hr {
 h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
   font-weight: normal;
-  margin: 0.5rem 0;
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom:  $vertical-padding;
+}
+
+.h {
+  font-weight: normal;
+  font-family: $serif;
+  margin-bottom: 0.3em;
+}
+
+.h--featured {
+  font-size: 1.3rem;
+}
+
+.avatar {
+  img {
+    border-radius: 100%;
+    max-width: 140px;
+  }
+}
+
+.valign-middle {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .footer {
   @include padded_row;
-  $color: tint($canvas-color, 60%);
   padding-top: 1em;
-  background: $color;
-  border-top: 1px solid shade($color, 10%);
-  border-bottom: 1px solid shade($color, 10%);
-  color: shade($color, 60%);
-}
-
-.testimonials {
-  $color: tint($canvas-color, 60%);
-  color: shade($color, 60%);
+  background: $footer-bg-color;
+  border-top: 1px solid shade($footer-bg-color, 10%);
+  border-bottom: 2px solid shade($footer-bg-color, 10%);
+  color: $footer-text-color;
 }
 
 .project-quote {
   color: $secondary-text-color;
+  margin-bottom: $vertical-padding;
   blockquote {
     font-size: 1.8rem;
   }
@@ -188,15 +214,17 @@ cite {
 
 .section-heading {
   font-size: 0.8rem;
-  padding: 0.4rem 0;
-  margin: 2rem 0 0;
-  border-bottom: 1px solid $border-color;
-  color: $secondary-text-color;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin-top: $vertical-padding;
+  margin-bottom: $vertical-padding / 2;
+  border-bottom: 1px solid $footer-border-color;
+  color: $footer-secondary-text-color;
 }
 
-.featured-heading {
-  @extend %heading;
-  font-size: 1.3rem;
+.section-heading--footer {
+  border-bottom-color: $footer-border-color;
+  color: $footer-secondary-text-color;
 }
 
 .text {
@@ -204,16 +232,12 @@ cite {
 }
 
 .project {
-  padding: $vertical-padding 0;
-}
-.project-heading {
-  @extend %heading;
+  padding-bottom: $vertical-padding * 2;
 }
 
-.imprint {
-  color: $secondary-text-color;
+.figure {
+  margin-bottom: 0.5em;
 }
-
 .figure-img {
   box-shadow: 0 1px 3px rgba(#333, 0.5);
 }
