@@ -157,8 +157,8 @@ cite {
   @include padded_row;
   background: $highlight-color;
   border-bottom: 1px solid shade($highlight-color, 10%);
-  padding-top: 1rem;
-  padding-bottom: 2.6rem;
+  padding-top: $vertical-padding;
+  padding-bottom: $vertical-padding;
   color: shade($highlight-color, 70%);
 }
 .header-title {
