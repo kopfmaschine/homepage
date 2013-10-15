@@ -20,7 +20,8 @@ $serif: 'Vollkorn', serif;
 
 $large-screen: 640px;
 
-@mixin padded_row($width) {
+@mixin padded_row {
+  $width: 52rem;
   padding-right: $page-gutter;
   padding-left: $page-gutter;
   max-width: $width;
@@ -112,7 +113,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .footer {
-  @include padded_row(45rem);
+  @include padded_row;
   $color: tint($canvas-color, 60%);
   padding-top: 1em;
   background: $color;
@@ -153,7 +154,7 @@ cite {
 }
 
 .header {
-  @include padded_row(52rem);
+  @include padded_row;
   background: $highlight-color;
   border-bottom: 1px solid shade($highlight-color, 10%);
   padding-top: 1rem;
@@ -183,7 +184,7 @@ cite {
 }
 
 .main {
-  @include padded_row(45rem);
+  @include padded_row;
 }
 
 .section-heading {
