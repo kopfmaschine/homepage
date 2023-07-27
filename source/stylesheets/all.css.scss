@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "base";
-@import "compass";
-@import "breakpoint";
+@import "bourbon";
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
 
 $white: white;
@@ -35,9 +34,9 @@ $large-screen: 640px;
   padding-left: $page-gutter;
   max-width: $width;
   margin: 0 auto;
-  @include breakpoint($width + 2 * $page-gutter) {
-    @include experimental-value(padding-left, calc(50% - #{$width / 2}));
-    @include experimental-value(padding-right, calc(50% - #{$width / 2}));
+  @media (min-width: $width + 2 * $page-gutter) {
+    padding-left: calc(50% - #{$width / 2});
+    padding-right: calc(50% - #{$width / 2});
   }
 }
 
@@ -52,8 +51,8 @@ a {
 .units {
   width: 100%;
   padding-bottom: 1rem;
-  @include breakpoint($large-screen) {
-    @include box-sizing(border-box);
+  @media (min-width: $large-screen) {
+    box-sizing: border-box;
     vertical-align: top;
     display: inline-block;
     width: auto;
@@ -62,7 +61,7 @@ a {
     &.last {
       padding-right: 0;
     }
-    // This is ana eight column grid.
+    // This is an eight column grid.
     $unit: 100% / 12;
     &.two { width: $unit * 2 }
     &.three { width: $unit * 3 }
@@ -178,7 +177,7 @@ cite {
   border-bottom: 1px solid shade($highlight-color, 10%);
   padding-bottom: $vertical-padding;
   color: shade($highlight-color, 70%);
-  @include breakpoint($large-screen) {
+  @media ($large-screen) {
     padding-top: $vertical-padding;
   }
 }
@@ -188,7 +187,7 @@ cite {
 .header-logo {
   margin: 1rem 0;
   max-width: 150px;
-  @include breakpoint($large-screen) {
+  @media ($large-screen) {
     max-width: none;
   }
 }
